@@ -135,29 +135,6 @@ Instálalas desde el Marketplace (`Ctrl+Shift+X`):
 
 ---
 
-## 🗂️ Estructura recomendada de carpetas
-
-```
-apuntes/
-├── README.md
-├── guias/
-│   ├── calculo_diferencial.md
-│   ├── frontend_TI3031.md
-│   ├── nosql_TI3032.md
-│   ├── calidad_software_TILE11.md
-│   ├── sistemas_operativos_TI3035.md
-│   ├── innovacion_emprendimiento_FGIE01.md
-│   └── seguridad_informacion_TI3034.md
-├── laboratorios/
-│   ├── vlsm_ejercicios.md
-│   ├── kali_notas.md
-│   └── react_practicas/
-└── resumenes/
-    └── evaluaciones/
-```
-
----
-
 ## ⚙️ Verificar que todo funciona
 
 **Linux (fish shell)**
