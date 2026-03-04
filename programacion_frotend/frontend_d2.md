@@ -5,21 +5,8 @@
 
 ## Mapa general del ramo
 
-```d2
-direction: right
+![Diagrama 1](img/frontend_d2_1.svg)
 
-u1: "Unidad 1\nHTML5 y CSS3" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-u2: "Unidad 2\nJavaScript y DOM" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-u3: "Unidad 3\nReact y SPAs" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-u1 -> u2 -> u3
-
-git: "Git / GitHub" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-ia: "GitHub Copilot" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-u1 -> git
-u3 -> ia
-```
 
 ---
 
@@ -39,32 +26,8 @@ El **Front End** es la parte de una aplicación web que el usuario **ve e intera
 
 ### HTML5 — Árbol del documento
 
-```d2
-direction: down
+![Diagrama 2](img/frontend_d2_2.svg)
 
-doc: "document" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-html: "html" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-head: "head" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-body: "body" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-header: "header" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-nav: "nav" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-main: "main" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-footer: "footer" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-section: "section" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-article: "article" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-doc -> html
-html -> head
-html -> body
-body -> header
-body -> nav
-body -> main
-body -> footer
-main -> section
-main -> article
-```
 
 ```html
 <!DOCTYPE html>
@@ -90,16 +53,8 @@ main -> article
 
 ### CSS3 — Box Model
 
-```d2
-direction: down
+![Diagrama 3](img/frontend_d2_3.svg)
 
-margin: "margin\n(espacio exterior)" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-border: "border\n(borde visible)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-padding: "padding\n(espacio interior)" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-content: "content\n(contenido real)" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-margin -> border -> padding -> content
-```
 
 **Flexbox** — layout de una dimensión:
 
@@ -136,17 +91,8 @@ margin -> border -> padding -> content
 
 ### Git — Flujo de trabajo
 
-```d2
-direction: right
+![Diagrama 4](img/frontend_d2_4.svg)
 
-wd: "Working Directory\neditar archivos" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-stage: "Staging Area\ngit add" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-repo: "Local Repository\ngit commit" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-remote: "Remote (GitHub)\ngit push" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-wd -> stage -> repo -> remote
-remote -> wd: "git pull" {style.stroke-dash: 4}
-```
 
 ---
 
@@ -154,24 +100,8 @@ remote -> wd: "git pull" {style.stroke-dash: 4}
 
 ### El DOM como árbol
 
-```d2
-direction: down
+![Diagrama 5](img/frontend_d2_5.svg)
 
-doc: "document" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-body: "body" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-header: "header" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-main: "main" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-footer: "footer" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-section: "section" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-p: "p  ← JS puede modificar esto" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-doc -> body
-body -> header
-body -> main
-body -> footer
-main -> section
-section -> p
-```
 
 ---
 
@@ -218,22 +148,8 @@ const saludar = (nombre = "visitante") => `Hola, ${nombre}!`;
 
 ### Manipulación del DOM — flujo
 
-```d2
-direction: right
+![Diagrama 6](img/frontend_d2_6.svg)
 
-js: "JavaScript" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-sel: "querySelector\nquerySelectorAll" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-nodo: "Nodo del DOM" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-mod: "Modificar contenido\ntextContent / innerHTML" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-est: "Modificar estilos\nstyle / classList" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-evt: "Escuchar eventos\naddEventListener" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-js -> sel -> nodo
-nodo -> mod
-nodo -> est
-nodo -> evt
-```
 
 ```js
 const titulo = document.querySelector("h1");
@@ -249,21 +165,8 @@ document.querySelector("#btn").addEventListener("click", () => {
 
 ### Validación de formularios — flujo
 
-```d2
-direction: down
+![Diagrama 7](img/frontend_d2_7.svg)
 
-sub: "Usuario hace submit" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-prev: "e.preventDefault()\nevitar recarga" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-leer: "Leer valores del formulario" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-val: "Validar campos" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-err: "Inválido\nmostrar error" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-ok: "Válido\nenviar datos ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-sub -> prev -> leer -> val
-val -> err: "falla" {style.stroke-dash: 4}
-val -> ok: "pasa"
-```
 
 ---
 
@@ -271,46 +174,15 @@ val -> ok: "pasa"
 
 ### Página tradicional vs SPA
 
-```d2
-direction: down
+![Diagrama 8](img/frontend_d2_8.svg)
 
-trad: "Página Tradicional" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-t1: "Clic del usuario"
-t2: "Solicitud al servidor"
-t3: "Nueva página HTML"
-t4: "Recarga visual completa"
-trad -> t1 -> t2 -> t3 -> t4
-
-spa: "SPA con React" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-s1: "Clic del usuario"
-s2: "JS actualiza el DOM"
-s3: "UI actualizada sin recarga ✓"
-spa -> s1 -> s2 -> s3
-```
 
 ---
 
 ### Árbol de componentes React
 
-```d2
-direction: down
+![Diagrama 9](img/frontend_d2_9.svg)
 
-app: "App (raíz)" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-header: "Header" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-main: "Main" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-footer: "Footer" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-t1: "Tarjeta" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-t2: "Tarjeta" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-t3: "Tarjeta" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-app -> header
-app -> main
-app -> footer
-main -> t1: "props"
-main -> t2: "props"
-main -> t3: "props"
-```
 
 ```jsx
 function Tarjeta({ titulo, descripcion }) {
@@ -327,16 +199,8 @@ function Tarjeta({ titulo, descripcion }) {
 
 ### Ciclo de useState
 
-```d2
-direction: right
+![Diagrama 10](img/frontend_d2_10.svg)
 
-render: "Render inicial\ncontador = 0" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-evt: "Usuario hace clic" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-setter: "setContador(contador + 1)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-rerender: "React re-renderiza\ncontador = 1" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-render -> evt -> setter -> rerender -> evt: "ciclo" {style.stroke-dash: 4}
-```
 
 ```jsx
 const [contador, setContador] = useState(0);
@@ -356,19 +220,8 @@ const [contador, setContador] = useState(0);
 
 ### Consumo de API — flujo async/await
 
-```d2
-direction: down
+![Diagrama 11](img/frontend_d2_11.svg)
 
-montar: "Componente se monta" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-fetch: "fetch(url)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-json: "res.json()" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-estado: "setDatos(datos)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-render: "React renderiza la lista ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-err: "catch → manejar error" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-montar -> fetch -> json -> estado -> render
-fetch -> err: "falla" {style.stroke-dash: 4}
-```
 
 ```jsx
 useEffect(() => {
@@ -404,22 +257,8 @@ localStorage.removeItem("usuario");
 
 ## Resumen del Stack
 
-```d2
-direction: right
+![Diagrama 12](img/frontend_d2_12.svg)
 
-html: "HTML5\nestructura" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-css: "CSS3\nestilos" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-js: "JavaScript\nlógica" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-react: "React\ncomponentes" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-api: "APIs\ndatos externos" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-ls: "Local Storage\npersistencia" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-html -> js
-css -> js
-js -> react
-react -> api
-react -> ls
-```
 
 ---
 

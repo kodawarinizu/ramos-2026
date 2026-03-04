@@ -5,19 +5,8 @@
 
 ## Mapa general del ramo
 
-```d2
-direction: right
+![Diagrama 1](img/sistemas_operativos_TI3035_1.svg)
 
-u1: "Unidad 1\nDireccionamiento TCP/IP" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-u2: "Unidad 2\nWindows Server" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-u3: "Unidad 3\nLinux Server" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-u1 -> u2 -> u3
-
-aws: "AWS Academy\nEC2 / Cloud" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-u2 -> aws
-u3 -> aws
-```
 
 ---
 
@@ -38,23 +27,8 @@ IPv4 usa **32 bits** divididos en 4 octetos:
 
 ### Clases de direcciones IPv4
 
-```d2
-direction: down
+![Diagrama 2](img/sistemas_operativos_TI3035_2.svg)
 
-ipv4: "Direcciones IPv4" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-claseA: "Clase A\n1.0.0.0 - 126.255.255.255\nMascara /8  →  16 millones de hosts" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-claseB: "Clase B\n128.0.0.0 - 191.255.255.255\nMascara /16  →  65.534 hosts" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-claseC: "Clase C\n192.0.0.0 - 223.255.255.255\nMascara /24  →  254 hosts" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-claseD: "Clase D\nMulticast\n224.0.0.0 - 239.255.255.255" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-claseE: "Clase E\nReservado\n240.0.0.0 - 255.255.255.255" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-ipv4 -> claseA
-ipv4 -> claseB
-ipv4 -> claseC
-ipv4 -> claseD
-ipv4 -> claseE
-```
 
 | Clase | Primer octeto | Máscara default | Hosts por red |
 |---|---|---|---|
@@ -107,21 +81,8 @@ Divide la red en subredes **del mismo tamaño**. Útil cuando todas las subredes
 
 Divide la red en subredes de **tamaños distintos** según la necesidad real de cada segmento.
 
-```d2
-direction: down
+![Diagrama 3](img/sistemas_operativos_TI3035_3.svg)
 
-red: "Red base\n192.168.1.0/24\n254 hosts disponibles" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-s1: "Subred 1 /25\n126 hosts\noficina principal" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-s2: "Subred 2 /26\n62 hosts\nsucursal" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-s3: "Subred 3 /27\n30 hosts\nbodega" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-s4: "Subred 4 /30\n2 hosts\nenlace punto a punto" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-red -> s1: "asignar primero\nla mas grande"
-red -> s2
-red -> s3
-red -> s4
-```
 
 > **Regla VLSM:** siempre asignar primero la subred más grande para no fragmentar el espacio.
 
@@ -131,18 +92,8 @@ red -> s4
 
 ### Configuración básica inicial
 
-```d2
-direction: down
+![Diagrama 4](img/sistemas_operativos_TI3035_4.svg)
 
-inst: "Instalación Windows Server" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-hostname: "Configurar hostname" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-ip: "Asignar IP estática" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-update: "Actualizaciones del OS" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-fw: "Reglas de Firewall" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-rdp: "Prueba RDP exitosa" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-inst -> hostname -> ip -> update -> fw -> rdp
-```
 
 ---
 
@@ -150,28 +101,8 @@ inst -> hostname -> ip -> update -> fw -> rdp
 
 **Active Directory (AD)** centraliza la administración de usuarios, equipos y políticas en un dominio Windows.
 
-```d2
-direction: down
+![Diagrama 5](img/sistemas_operativos_TI3035_5.svg)
 
-dominio: "Dominio\nempresa.local" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-ou1: "OU: Usuarios" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-ou2: "OU: Computadores" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-ou3: "OU: Grupos" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-u1: "user1" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-u2: "user2" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-pc1: "PC-001" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-g1: "GrupoAdmin" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-dominio -> ou1
-dominio -> ou2
-dominio -> ou3
-ou1 -> u1
-ou1 -> u2
-ou2 -> pc1
-ou3 -> g1
-```
 
 ---
 
@@ -181,15 +112,8 @@ Las **GPO** son políticas que se aplican automáticamente a usuarios y equipos 
 
 Ejemplos: bloquear Panel de Control, mapear unidades de red, deshabilitar USB, configurar fondo corporativo.
 
-```d2
-direction: right
+![Diagrama 6](img/sistemas_operativos_TI3035_6.svg)
 
-dc: "Domain Controller\nAD + GPO" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-gpo: "GPO aplicada\nal iniciar sesion" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-pc: "Estacion de trabajo\nunida al dominio" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-dc -> gpo -> pc: "politica aplicada"
-```
 
 ---
 
@@ -205,21 +129,8 @@ dc -> gpo -> pc: "politica aplicada"
 
 ### Hardenización de Windows Server
 
-```d2
-direction: down
+![Diagrama 7](img/sistemas_operativos_TI3035_7.svg)
 
-hard: "Hardenizacion Windows" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-fs: "Cifrar File System\nBitLocker / EFS" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-svc: "Deshabilitar servicios\nno utilizados" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-fw2: "Politicas de Firewall\nbloquer puertos innecesarios" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-upd: "Mantener actualizado\nOS y antivirus" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-hard -> fs
-hard -> svc
-hard -> fw2
-hard -> upd
-```
 
 ---
 
@@ -227,21 +138,8 @@ hard -> upd
 
 ### Las 4 Libertades del Software Libre
 
-```d2
-direction: down
+![Diagrama 8](img/sistemas_operativos_TI3035_8.svg)
 
-sl: "Software Libre\nProyecto GNU" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-l0: "Libertad 0\nUsar el programa con cualquier proposito" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-l1: "Libertad 1\nEstudiar y modificar el codigo fuente" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-l2: "Libertad 2\nDistribuir copias" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-l3: "Libertad 3\nDistribuir versiones modificadas" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-sl -> l0
-sl -> l1
-sl -> l2
-sl -> l3
-```
 
 | Concepto | Significado |
 |---|---|
@@ -254,25 +152,8 @@ sl -> l3
 
 ### File System Linux
 
-```d2
-direction: down
+![Diagrama 9](img/sistemas_operativos_TI3035_9.svg)
 
-root: "/" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-bin: "/bin\nbinarios esenciales" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-etc: "/etc\nconfiguracion del sistema" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-home: "/home\nusuarios del sistema" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-var: "/var\nlogs y datos variables" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-tmp: "/tmp\narchivos temporales" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-usr: "/usr\naplicaciones instaladas" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-root -> bin
-root -> etc
-root -> home
-root -> var
-root -> tmp
-root -> usr
-```
 
 ---
 
@@ -302,15 +183,8 @@ chown usuario:grupo archivo
 
 ### Gestores de paquetes
 
-```d2
-direction: right
+![Diagrama 10](img/sistemas_operativos_TI3035_10.svg)
 
-repo: "Repositorio\nservidor de paquetes" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-pkg: "Gestor de paquetes" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-sys: "Sistema instalado" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-repo -> pkg -> sys: "instala / actualiza"
-```
 
 | Distro | Gestor | Ejemplo |
 |---|---|---|
@@ -328,23 +202,8 @@ rpm -qa              # listar paquetes instalados
 
 ### Hardenización de Linux Server
 
-```d2
-direction: down
+![Diagrama 11](img/sistemas_operativos_TI3035_11.svg)
 
-hardl: "Hardenizacion Linux" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-av: "ClamAV\nantivirus open source" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-ark: "rkhunter / chkrootkit\ndeteccion de rootkits" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-fw3: "iptables / firewalld\nfirewall a nivel de kernel" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-upd2: "Actualizar paquetes\nyum update / apt upgrade" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-ssh: "Securizar SSH\ncambiar puerto, deshabilitar root" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-hardl -> av
-hardl -> ark
-hardl -> fw3
-hardl -> upd2
-hardl -> ssh
-```
 
 ```bash
 # /etc/ssh/sshd_config
@@ -357,22 +216,8 @@ PasswordAuthentication no
 
 ## Resumen comparativo
 
-```d2
-direction: right
+![Diagrama 12](img/sistemas_operativos_TI3035_12.svg)
 
-windows: "Windows Server" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-linux: "Linux Server" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-wad: "AD / GPO\nDHCP / DNS / IIS" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-lad: "Archivos config\niptables / SSH / yum" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-windows -> wad
-linux -> lad
-
-aws2: "AWS EC2\nambos en la nube" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-wad -> aws2
-lad -> aws2
-```
 
 ---
 

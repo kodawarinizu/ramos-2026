@@ -5,23 +5,8 @@
 
 ## Mapa general del ramo
 
-```d2
-direction: right
+![Diagrama 1](img/calculo_d2_1.svg)
 
-u1: "Unidad 1\nLímites y Continuidad" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-u2: "Unidad 2\nDerivadas" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-u3: "Unidad 3\nAplicaciones" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-u1 -> u2 -> u3
-
-opt: "Optimización" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-tc: "Tasas de cambio" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-af: "Análisis de funciones" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-u3 -> opt
-u3 -> tc
-u3 -> af
-```
 
 ---
 
@@ -62,31 +47,8 @@ $$\lim_{x \to a} [f(x)]^n = L^n$$
 
 ### Formas indeterminadas — flujo de resolución
 
-```d2
-direction: down
+![Diagrama 2](img/calculo_d2_2.svg)
 
-inicio: "Sustituir x = a" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-ok: "Resultado definido\nEse es el límite ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-ind: "Forma indeterminada\n0/0 ó infinito/infinito" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-inicio -> ok: "sin problema"
-inicio -> ind: "falla"
-
-fact: "Factorizar\nCancelar factor común" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-rac: "Racionalizar\nMultiplicar por conjugado" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-lhop: "Regla de L'Hôpital\nDerivar num. y den." {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-ind -> fact: "polinomios"
-ind -> rac: "raíces"
-ind -> lhop: "funciones complejas"
-
-eval: "Evaluar de nuevo → L ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-fact -> eval
-rac -> eval
-lhop -> eval
-```
 
 **Ejemplo — factorización:**
 
@@ -100,24 +62,8 @@ $$\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$$
 
 ### Continuidad — las tres condiciones
 
-```d2
-direction: right
+![Diagrama 3](img/calculo_d2_3.svg)
 
-c1: "1. f(a) está definida" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-c2: "2. El límite existe\ncuando x tiende a a" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-c3: "3. El límite es igual\na f(a)" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-ok: "Continua en x = a ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-c1 -> c2 -> c3 -> ok
-
-d1: "Discontinuidad\nesencial" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-d2: "Discontinuidad\nde salto" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-d3: "Discontinuidad\nevitable" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-
-c1 -> d1: "falla" {style.stroke-dash: 4}
-c2 -> d2: "falla" {style.stroke-dash: 4}
-c3 -> d3: "falla" {style.stroke-dash: 4}
-```
 
 ---
 
@@ -162,21 +108,8 @@ $$f'(x) = \frac{dy}{dx} = \frac{d}{dx}[f(x)] = \dot{y}$$
 
 ### Regla de la cadena — cómo aplicarla
 
-```d2
-direction: right
+![Diagrama 4](img/calculo_d2_4.svg)
 
-comp: "f(g(x))\nfunción compuesta" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-ext: "Capa exterior f\nDerivar manteniendo g(x)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-int: "Capa interior g\nDerivar g(x) → g'(x)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-res: "Multiplicar\nf'(g(x)) · g'(x)" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-comp -> ext: "identificar"
-comp -> int: "identificar"
-ext -> res
-int -> res
-```
 
 ---
 
@@ -204,58 +137,15 @@ En $t = 2$ el proyectil está en su **punto más alto**.
 
 ### Análisis completo de una función
 
-```d2
-direction: down
+![Diagrama 5](img/calculo_d2_5.svg)
 
-f: "Función f(x)" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-
-fp: "Primera derivada f'(x)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-fpp: "Segunda derivada f''(x)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-f -> fp
-f -> fpp
-
-crec: "f'(x) > 0\ncreciente" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-decrec: "f'(x) < 0\ndecreciente" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-crit: "f'(x) = 0\npunto crítico x₀" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-fp -> crec
-fp -> decrec
-fp -> crit
-
-min: "f''(x₀) > 0\nmínimo local" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-max: "f''(x₀) < 0\nmáximo local" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-inc: "f''(x₀) = 0\nno concluyente" {style.fill: "#f1f5f9"; style.stroke: "#94a3b8"}
-
-crit -> min
-crit -> max
-crit -> inc
-
-cup: "f''(x) > 0\ncóncava hacia arriba" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-cdown: "f''(x) < 0\ncóncava hacia abajo" {style.fill: "#fce7f3"; style.stroke: "#ec4899"}
-infl: "f''(x) = 0\nposible inflexión" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-
-fpp -> cup
-fpp -> cdown
-fpp -> infl
-```
 
 ---
 
 ### Optimización — Procedimiento
 
-```d2
-direction: down
+![Diagrama 6](img/calculo_d2_6.svg)
 
-p1: "1. Función objetivo f(x)" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-p2: "2. Restricciones del problema" {style.fill: "#dbeafe"; style.stroke: "#3b82f6"}
-p3: "3. Reducir a una variable" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-p4: "4. Derivar: f'(x) = 0" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-p5: "5. Verificar con f''(x)" {style.fill: "#fef9c3"; style.stroke: "#eab308"}
-p6: "6. Interpretar en contexto ✓" {style.fill: "#dcfce7"; style.stroke: "#22c55e"}
-
-p1 -> p2 -> p3 -> p4 -> p5 -> p6
-```
 
 ---
 

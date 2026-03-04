@@ -6,15 +6,15 @@ Kit de estudio con diagramas D2, tablas y ejemplos de código para los ramos del
 
 ## 📂 Contenido
 
-| Archivo | Ramo | Código |
+| Ramo | Código | Guía |
 |---|---|---|
-| `calculo_diferencial.md` | Cálculo Diferencial | CBCD01 |
-| `frontend_TI3031.md` | Programación Front End | TI3031 |
-| `nosql_TI3032.md` | Bases de Datos No Estructuradas | TI3032 |
-| `calidad_software_TILE11.md` | Calidad de Componentes de Software | TILE11 |
-| `sistemas_operativos_TI3035.md` | Sistemas Operativos | TI3035 |
-| `innovacion_emprendimiento_FGIE01.md` | Innovación y Emprendimiento I | FGIE01 |
-| `seguridad_informacion_TI3034.md` | Fundamentos de Seguridad de la Información | TI3034 |
+| Cálculo Diferencial | CBCD01 | [→ Abrir](./calculo_diferencial/README.md) |
+| Programación Front End | TI3031 | [→ Abrir](./programacion_frotend/README.md) |
+| Bases de Datos No Estructuradas | TI3032 | [→ Abrir](./base_de_datos_no_estructuradas/README.md) |
+| Calidad de Componentes de Software | TILE11 | [→ Abrir](./calidad_componente_de_software/README.md) |
+| Sistemas Operativos | TI3035 | [→ Abrir](./sistemas_operativos/README.md) |
+| Innovación y Emprendimiento I | FGIE01 | [→ Abrir](./innovacion_emprendimiento/README.md) |
+| Fundamentos de Seguridad de la Información | TI3034 | [→ Abrir](./seguridad_informacion/README.md) |
 
 ---
 
