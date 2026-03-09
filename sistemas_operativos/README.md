@@ -25,6 +25,94 @@ IPv4 usa **32 bits** divididos en 4 octetos:
 
 ---
 
+### Conversión de bases numéricas
+
+#### Decimal a Binario
+
+Divide el número decimal entre 2 sucesivamente y lee los restos de abajo hacia arriba.
+
+**Ejemplo — 192 en binario:**
+```
+192 ÷ 2 = 96  resto 0
+ 96 ÷ 2 = 48  resto 0
+ 48 ÷ 2 = 24  resto 0
+ 24 ÷ 2 = 12  resto 0
+ 12 ÷ 2 =  6  resto 0
+  6 ÷ 2 =  3  resto 0
+  3 ÷ 2 =  1  resto 1
+  1 ÷ 2 =  0  resto 1
+                        ↑ leer de abajo hacia arriba
+192 decimal = 11000000 binario
+```
+
+#### Binario a Decimal
+
+Multiplica cada bit por su potencia de 2 según su posición (de derecha a izquierda desde 2⁰).
+
+**Ejemplo — 11000000 en decimal:**
+```
+Posición: 7  6  5  4  3  2  1  0
+Bit:      1  1  0  0  0  0  0  0
+
+(1×2⁷) + (1×2⁶) + (0×2⁵) + ... + (0×2⁰)
+= 128  +   64   +    0   + ... +    0
+= 192
+```
+
+| Potencia | 2⁷ | 2⁶ | 2⁵ | 2⁴ | 2³ | 2² | 2¹ | 2⁰ |
+|---|---|---|---|---|---|---|---|---|
+| Valor | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+#### Decimal a Hexadecimal
+
+Divide entre 16 y usa letras para los restos mayores a 9: A=10, B=11, C=12, D=13, E=14, F=15.
+
+**Ejemplo — 192 en hexadecimal:**
+```
+192 ÷ 16 = 12  resto 0   → 0
+ 12 ÷ 16 =  0  resto 12  → C
+                            ↑ leer de abajo hacia arriba
+192 decimal = C0 hexadecimal
+```
+
+#### Binario a Hexadecimal
+
+Agrupa los bits de a 4 (de derecha a izquierda) y convierte cada grupo a su valor hexadecimal.
+
+**Ejemplo — 11000000 en hexadecimal:**
+```
+1100  0000
+ ↓      ↓
+ C      0
+
+11000000 binario = C0 hexadecimal
+```
+
+**Tabla de referencia rápida:**
+
+| Decimal | Binario | Hexadecimal |
+|---|---|---|
+| 0  | 0000 | 0 |
+| 1  | 0001 | 1 |
+| 2  | 0010 | 2 |
+| 3  | 0011 | 3 |
+| 4  | 0100 | 4 |
+| 5  | 0101 | 5 |
+| 6  | 0110 | 6 |
+| 7  | 0111 | 7 |
+| 8  | 1000 | 8 |
+| 9  | 1001 | 9 |
+| 10 | 1010 | A |
+| 11 | 1011 | B |
+| 12 | 1100 | C |
+| 13 | 1101 | D |
+| 14 | 1110 | E |
+| 15 | 1111 | F |
+
+> **Truco:** En redes, las IPs se expresan en decimal pero internamente operan en binario. Las MACs se expresan en hexadecimal (ej: `C0:A8:01:0A`).
+
+---
+
 ### Clases de direcciones IPv4
 
 ![Diagrama 2](img/sistemas_operativos_TI3035_2.svg)
